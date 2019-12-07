@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Roopesh Ramnivas</Authors>
+    <Company>None</Company>
+    <Product>Web Advert</Product>
+  </PropertyGroup>
+
+</Project>

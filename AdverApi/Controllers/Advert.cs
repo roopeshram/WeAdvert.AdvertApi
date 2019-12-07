@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AdverApi.Services;
 using AdvertApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,7 +32,9 @@ namespace AdverApi.Controllers
             string recordid;
             try
             {
-                 recordid = await _advertstorageservice.Add(model);
+                System.IO.File.WriteAllText(@"C:\inetpub\logfiles\log.txt", "Started");
+                System.IO.File.WriteAllText(@"C:\inetpub\logfiles\log.txt", model.Title);
+                recordid = await _advertstorageservice.Add(model);
             }
             catch(KeyNotFoundException)
             {
@@ -53,6 +56,7 @@ namespace AdverApi.Controllers
             try
             {
                 await _advertstorageservice.Confirm(model);
+                
             }
             catch (KeyNotFoundException)
             {
